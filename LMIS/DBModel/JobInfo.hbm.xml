@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="JobInfo" table="JobInfo" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="JobId">
+      <column name="JobId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+   
+    <property name="JobNumber"/>
+    <property name="Attention"/>
+    <property name="CC"/>
+    <property name="CreateDate"/>
+    <property name="Validatily"/>
+    <property name="TermOfPayment"/>
+    <property name="TotalAmount"/>
+    <property name="RewardPoint"/>
+    <property name="Payable"/>
+    <property name="PaymentDate"/>
+    <property name="Status"/>
+    <property name="Reward"/>
+    <property name="RewardValue"/>
+    <property name="PaidDate"/>
+    <property name="MicItemsCost"/>
+    <property name="MicItemsDescription"/>
+    <property name="Comments"/>
+    <many-to-one name="Customer" column="CustomerId" />
+    <property name="ApprovedDate"/>
+    <property name="EmailSend"/>
+    <property name="CompleteDate"/>
+  
+  </class>
+
+</hibernate-mapping>

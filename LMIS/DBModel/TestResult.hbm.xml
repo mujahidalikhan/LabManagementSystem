@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <class name="TestResult" table="TestResult" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="TestResultId">
+      <column name="TestResultId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+    <property name="ActiveTestId"/>
+    <property name="TestParameterInfoId"/>
+    <property name="Result"/>
+    <property name="IsValueEntered"/>
+    <property name="LastUpdateBy"/>
+    <property name="LastUpdateTime"/>
+    <property name="TempResultVal"/>
+    <property name="IsLocked"/>
+    <property name="TmpChangeBy"/>
+    <property name="IsValueModify"/>
+    <property name="Status"/>
+  </class>
+
+</hibernate-mapping>

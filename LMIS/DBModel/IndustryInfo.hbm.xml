@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="IndustryInfo" table="IndustryInfo" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="IndustryID">
+      <column name="IndustryID" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+    <property name="IndustryName"/>
+    <property name="Comments"/>
+
+  </class>
+
+</hibernate-mapping>

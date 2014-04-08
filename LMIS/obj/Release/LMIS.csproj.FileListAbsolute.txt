@@ -1,0 +1,13 @@
+F:\Freelance Projects\In progress\LMIS-NEW\LMIS\bin\LMIS.dll
+F:\Freelance Projects\In progress\LMIS-NEW\LMIS\bin\LMIS.pdb
+F:\Freelance Projects\In progress\LMIS-NEW\LMIS\obj\Release\LMIS.dll
+F:\Freelance Projects\In progress\LMIS-NEW\LMIS\obj\Release\LMIS.pdb
+E:\Mujahid\Bilal Bhai\!\LMIS\8-Dec-2013\LMIS-NEW(08-Dec-2013)\LMIS\bin\LMIS.dll
+E:\Mujahid\Bilal Bhai\!\LMIS\8-Dec-2013\LMIS-NEW(08-Dec-2013)\LMIS\bin\LMIS.pdb
+E:\Mujahid\Bilal Bhai\!\LMIS\8-Dec-2013\LMIS-NEW(08-Dec-2013)\LMIS\obj\Release\LMIS.dll
+E:\Mujahid\Bilal Bhai\!\LMIS\8-Dec-2013\LMIS-NEW(08-Dec-2013)\LMIS\obj\Release\LMIS.pdb
+E:\Projects\LMIS\LMIS\bin\LMIS.dll
+E:\Projects\LMIS\LMIS\bin\LMIS.pdb
+E:\Projects\LMIS\LMIS\obj\Release\ResolveAssemblyReference.cache
+E:\Projects\LMIS\LMIS\obj\Release\LMIS.dll
+E:\Projects\LMIS\LMIS\obj\Release\LMIS.pdb

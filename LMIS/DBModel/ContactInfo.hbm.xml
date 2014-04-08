@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Contact' -->
+  <class name="ContactInfo" table="ContactInfo" lazy="false">
+    <!-- Identity mapping -->
+    <id name="Id">
+      <column name="Id" />
+      <generator class="native" />
+    </id>
+    <!-- Simple mappings -->
+    <property name="CustID"/>
+    <property name="Salutation"/>
+    <property name="Name"/>
+    <property name="Position"/>
+    <property name="Phone"/>
+    <property name="HPhone"/>
+    <property name="Fax"/>
+   <property name="Email"/>
+  </class>
+
+</hibernate-mapping>

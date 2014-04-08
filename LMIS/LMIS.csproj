@@ -1,0 +1,1843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45407909-0C8D-452C-9893-5B8AA430EFA0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LMIS</RootNamespace>
+    <AssemblyName>LMIS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ApplicationServices-Deployment" Order="1" Enabled="False">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\aspnetdb.mdf%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\ApplicationServices-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="ConnectionString-Deployment" Order="2" Enabled="False">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\ASPNETDB.MDF%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\ConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ApplicationServices-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\aspnetdb.mdf%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ApplicationServices-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="ConnectionString-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\ASPNETDB.MDF%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>bin\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddEditAppoint.aspx" />
+    <Content Include="Admin\AddEditBottle.aspx" />
+    <Content Include="Admin\AddEditCustomerTestParameters.aspx" />
+    <Content Include="Admin\AddEditEvent.aspx" />
+    <Content Include="Admin\AddEditIndustry.aspx" />
+    <Content Include="Admin\AddEditPackingInfo.aspx" />
+    <Content Include="Admin\AddEditJobTestInfo.aspx" />
+    <Content Include="Admin\AddEditSpecification.aspx" />
+    <Content Include="Admin\AddJob.aspx" />
+    <Content Include="Admin\AddEditTestParameterInfo.aspx" />
+    <Content Include="Admin\AddJobTestBottleDetail.aspx" />
+    <Content Include="Admin\Appointment.aspx" />
+    <Content Include="Admin\ClientName.asmx" />
+    <Content Include="Admin\ArchiveJobnList.aspx" />
+    <Content Include="Admin\COAEmail.aspx" />
+    <Content Include="Admin\COAPrintable.aspx" />
+    <Content Include="Admin\CreateJobWizard.aspx" />
+    <Content Include="Admin\DashboardAdmin.aspx" />
+    <Content Include="Admin\DashboardParameter.aspx" />
+    <Content Include="Admin\DashboardSpecification.aspx" />
+    <Content Include="Admin\DeletAppointment.aspx" />
+    <Content Include="Admin\DeleteBottle.aspx" />
+    <Content Include="Admin\DeleteJobTestBottleDetail.aspx" />
+    <Content Include="Admin\DeleteSpecification.aspx" />
+    <Content Include="Admin\ListAllAppointment.aspx" />
+    <Content Include="Admin\ListSampleBottle.aspx" />
+    <Content Include="Admin\ListSpecification.aspx" />
+    <Content Include="Admin\ManagementDashboards.aspx" />
+    <Content Include="Admin\PerformanceReports.aspx" />
+    <Content Include="Admin\JobList.aspx" />
+    <Content Include="Admin\RecordHistoryList.aspx" />
+    <Content Include="Admin\ViewArchiveJob.aspx" />
+    <Content Include="Admin\DeleteEvent.aspx" />
+    <Content Include="Admin\Events.aspx" />
+    <Content Include="Admin\ListAllEvent.aspx" />
+    <Content Include="Admin\DeleteActiveTest.aspx" />
+    <Content Include="Admin\DeleteClient.aspx" />
+    <Content Include="Admin\DeleteCustomerTestParameters.aspx" />
+    <Content Include="Admin\DeleteIndustry.aspx" />
+    <Content Include="Admin\DeletePackingInfo.aspx" />
+    <Content Include="Admin\DeleteJobDetail.aspx" />
+    <Content Include="Admin\DeleteJobInfo.aspx" />
+    <Content Include="Admin\DeleteTestParameter.aspx" />
+    <Content Include="Admin\DeleteUser.aspx" />
+    <Content Include="Admin\EditJob.aspx" />
+    <Content Include="Admin\EmailJobcard.aspx" />
+    <Content Include="Admin\jobcardPrintabe.aspx" />
+    <Content Include="Admin\ListTestMaster.aspx" />
+    <Content Include="Admin\PrintJob.aspx" />
+    <Content Include="Admin\printTestPage.aspx" />
+    <Content Include="Admin\SamplePackingList.aspx" />
+    <Content Include="Admin\Schedule.aspx" />
+    <Content Include="Admin\TestMaster.aspx" />
+    <Content Include="Admin\TestParmeterList.aspx" />
+    <Content Include="Admin\AddEditClient.aspx" />
+    <Content Include="Admin\AddEditUser.aspx" />
+    <Content Include="Admin\ClientList.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\IndustryList.aspx" />
+    <Content Include="Admin\Jobcard.aspx" />
+    <Content Include="Admin\TimePicker.ascx" />
+    <Content Include="Admin\UpdateRewardValue.aspx" />
+    <Content Include="Admin\UpdateSmtpSetting.aspx" />
+    <Content Include="Admin\UserList.aspx" />
+    <Content Include="Admin\ViewJob.aspx" />
+    <Content Include="AppointScheduler\AddEditAppointControl.ascx" />
+    <Content Include="AppointScheduler\AppointControl.aspx" />
+    <Content Include="AppointScheduler\AppointScheduleControl.ascx" />
+    <Content Include="AppointScheduler\ListAllAppointControl.ascx" />
+    <EmbeddedResource Include="DBModel\SystemUsers.hbm.xml" />
+    <EmbeddedResource Include="DBModel\ActiveTestsInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBModel\CustomerInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\IndustryInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\IndustryTestInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\PackingInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\TestParam.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBModel\TestParameterInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\TestResultsInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\SmtpSetting.hbm.xml" />
+    <EmbeddedResource Include="DBModel\TestResult.hbm.xml" />
+    <EmbeddedResource Include="DBModel\Specification.hbm.xml" />
+    <EmbeddedResource Include="DBModel\CustomerTestParameters.hbm.xml" />
+    <EmbeddedResource Include="DBModel\JobInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\JobDetail.hbm.xml" />
+    <EmbeddedResource Include="DBModel\Events.hbm.xml" />
+    <EmbeddedResource Include="DBModel\RewardValue.hbm.xml" />
+    <EmbeddedResource Include="DBModel\JobDetailArchive.hbm.xml" />
+    <EmbeddedResource Include="DBModel\JobInfoArchive.hbm.xml" />
+    <EmbeddedResource Include="DBModel\Bottle.hbm.xml" />
+    <EmbeddedResource Include="DBModel\JobTestBottleDetail.hbm.xml" />
+    <EmbeddedResource Include="DBModel\SampleAssociation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBModel\SampleDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBModel\AppointmentList.hbm.xml" />
+    <EmbeddedResource Include="DBModel\Appointment.hbm.xml" />
+    <EmbeddedResource Include="DBModel\ContactInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\PointsInfo.hbm.xml" />
+    <EmbeddedResource Include="DBModel\RecordHistory.hbm.xml" />
+    <EmbeddedResource Include="DBModel\IntermediateCustomerContact.hbm.xml" />
+    <Content Include="images\arrow-down.png" />
+    <Content Include="images\bg1.png" />
+    <Content Include="images\button-aqua.png" />
+    <Content Include="images\button-blue.png" />
+    <Content Include="images\button-gray.png" />
+    <Content Include="images\button-green.png" />
+    <Content Include="images\button-red.png" />
+    <Content Include="images\dashbutton-active.png" />
+    <Content Include="images\dashbutton-hover.png" />
+    <Content Include="images\dashbutton-normal.png" />
+    <Content Include="images\datepicker-bg.png" />
+    <Content Include="images\default-button.png" />
+    <Content Include="images\down_arrow_select.jpg" />
+    <Content Include="images\error-page-buttonbg.png" />
+    <Content Include="images\fullcalendar\boxbg.png" />
+    <Content Include="images\header-bg.png" />
+    <Content Include="images\icon-button-bg-active.png" />
+    <Content Include="images\iconbutton-bg.png" />
+    <Content Include="images\icons\16x16\bin_closed.png" />
+    <Content Include="images\icons\16x16\chart_bar.png" />
+    <Content Include="images\icons\16x16\note.png" />
+    <Content Include="images\icons\16x16\page_copy.png" />
+    <Content Include="images\icons\16x16\printer.png" />
+    <Content Include="images\icons\button\alert.png" />
+    <Content Include="images\icons\button\arrow-down.png" />
+    <Content Include="images\icons\button\arrow-left.png" />
+    <Content Include="images\icons\button\arrow-right.png" />
+    <Content Include="images\icons\button\arrow-up.png" />
+    <Content Include="images\icons\button\bills-stack.png" />
+    <Content Include="images\icons\button\books.png" />
+    <Content Include="images\icons\button\brush.png" />
+    <Content Include="images\icons\button\bubble.png" />
+    <Content Include="images\icons\button\bubbles.png" />
+    <Content Include="images\icons\button\buzz.png" />
+    <Content Include="images\icons\button\calendar.png" />
+    <Content Include="images\icons\button\chart2.png" />
+    <Content Include="images\icons\button\clock.png" />
+    <Content Include="images\icons\button\clock2.png" />
+    <Content Include="images\icons\button\clock3.png" />
+    <Content Include="images\icons\button\cog.png" />
+    <Content Include="images\icons\button\create.png" />
+    <Content Include="images\icons\button\cup.png" />
+    <Content Include="images\icons\button\cut.png" />
+    <Content Include="images\icons\button\digg.png" />
+    <Content Include="images\icons\button\download.png" />
+    <Content Include="images\icons\button\downloadtopc.png" />
+    <Content Include="images\icons\button\dribble.png" />
+    <Content Include="images\icons\button\facebook.png" />
+    <Content Include="images\icons\button\female.png" />
+    <Content Include="images\icons\button\finish-flag.png" />
+    <Content Include="images\icons\button\folder.png" />
+    <Content Include="images\icons\button\graph.png" />
+    <Content Include="images\icons\button\group.png" />
+    <Content Include="images\icons\button\help.png" />
+    <Content Include="images\icons\button\home.png" />
+    <Content Include="images\icons\button\info.png" />
+    <Content Include="images\icons\button\laptop.png" />
+    <Content Include="images\icons\button\lastfm.png" />
+    <Content Include="images\icons\button\link.png" />
+    <Content Include="images\icons\button\lock.png" />
+    <Content Include="images\icons\button\mail.png" />
+    <Content Include="images\icons\button\male.png" />
+    <Content Include="images\icons\button\map.png" />
+    <Content Include="images\icons\button\mastercard.png" />
+    <Content Include="images\icons\button\megaphone.png" />
+    <Content Include="images\icons\button\mic.png" />
+    <Content Include="images\icons\button\money.png" />
+    <Content Include="images\icons\button\mouse.png" />
+    <Content Include="images\icons\button\paypal.png" />
+    <Content Include="images\icons\button\personal-folder.png" />
+    <Content Include="images\icons\button\phone.png" />
+    <Content Include="images\icons\button\phone2.png" />
+    <Content Include="images\icons\button\plane-suitcase.png" />
+    <Content Include="images\icons\button\power.png" />
+    <Content Include="images\icons\button\preview.png" />
+    <Content Include="images\icons\button\price-tag.png" />
+    <Content Include="images\icons\button\printer.png" />
+    <Content Include="images\icons\button\refresh.png" />
+    <Content Include="images\icons\button\search.png" />
+    <Content Include="images\icons\button\settings.png" />
+    <Content Include="images\icons\button\shopping-bag.png" />
+    <Content Include="images\icons\button\shopping-basket.png" />
+    <Content Include="images\icons\button\shopping-cart.png" />
+    <Content Include="images\icons\button\shopping-cart2.png" />
+    <Content Include="images\icons\button\shuffle.png" />
+    <Content Include="images\icons\button\signal.png" />
+    <Content Include="images\icons\button\skype.png" />
+    <Content Include="images\icons\button\slide.png" />
+    <Content Include="images\icons\button\sound.png" />
+    <Content Include="images\icons\button\stand.png" />
+    <Content Include="images\icons\button\suitcase.png" />
+    <Content Include="images\icons\button\tag.png" />
+    <Content Include="images\icons\button\travel-suitcase.png" />
+    <Content Include="images\icons\button\trolly.png" />
+    <Content Include="images\icons\button\twitter.png" />
+    <Content Include="images\icons\button\user-comment.png" />
+    <Content Include="images\icons\button\user.png" />
+    <Content Include="images\icons\button\users.png" />
+    <Content Include="images\icons\button\vimeo.png" />
+    <Content Include="images\icons\button\visa.png" />
+    <Content Include="images\icons\button\walking-man.png" />
+    <Content Include="images\icons\button\world.png" />
+    <Content Include="images\icons\button\youtube.png" />
+    <Content Include="images\icons\dashbutton\applications.png" />
+    <Content Include="images\icons\dashbutton\bubble.png" />
+    <Content Include="images\icons\dashbutton\bubbles.png" />
+    <Content Include="images\icons\dashbutton\calendar.png" />
+    <Content Include="images\icons\dashbutton\chemical.png" />
+    <Content Include="images\icons\dashbutton\clock.png" />
+    <Content Include="images\icons\dashbutton\creadit-card.png" />
+    <Content Include="images\icons\dashbutton\documents.png" />
+    <Content Include="images\icons\dashbutton\frames.png" />
+    <Content Include="images\icons\dashbutton\graph.png" />
+    <Content Include="images\icons\dashbutton\group.png" />
+    <Content Include="images\icons\dashbutton\help.png" />
+    <Content Include="images\icons\dashbutton\image.png" />
+    <Content Include="images\icons\dashbutton\inbox.png" />
+    <Content Include="images\icons\dashbutton\info.png" />
+    <Content Include="images\icons\dashbutton\iphone4.png" />
+    <Content Include="images\icons\dashbutton\keyboard.png" />
+    <Content Include="images\icons\dashbutton\lock.png" />
+    <Content Include="images\icons\dashbutton\locked-folder.png" />
+    <Content Include="images\icons\dashbutton\mail.png" />
+    <Content Include="images\icons\dashbutton\map.png" />
+    <Content Include="images\icons\dashbutton\megaphone.png" />
+    <Content Include="images\icons\dashbutton\money.png" />
+    <Content Include="images\icons\dashbutton\paypal.png" />
+    <Content Include="images\icons\dashbutton\pc.png" />
+    <Content Include="images\icons\dashbutton\personal-folder.png" />
+    <Content Include="images\icons\dashbutton\search.png" />
+    <Content Include="images\icons\dashbutton\settings.png" />
+    <Content Include="images\icons\dashbutton\shopping-cart.png" />
+    <Content Include="images\icons\dashbutton\signal.png" />
+    <Content Include="images\icons\dashbutton\sticky-note.png" />
+    <Content Include="images\icons\dashbutton\timer.png" />
+    <Content Include="images\icons\dashbutton\user-comment.png" />
+    <Content Include="images\icons\dashbutton\users.png" />
+    <Content Include="images\icons\dashbutton\write.png" />
+    <Content Include="images\icons\error\accept.png" />
+    <Content Include="images\icons\error\cross.png" />
+    <Content Include="images\icons\error\error-red-big.png" />
+    <Content Include="images\icons\error\error.png" />
+    <Content Include="images\icons\error\help.png" />
+    <Content Include="images\icons\error\info-blue-big.png" />
+    <Content Include="images\icons\error\success-green-big.png" />
+    <Content Include="images\icons\header\dashboard.png" />
+    <Content Include="images\icons\header\graph.png" />
+    <Content Include="images\icons\header\message.png" />
+    <Content Include="images\icons\header\newpost.png" />
+    <Content Include="images\icons\header\support.png" />
+    <Content Include="images\icons\mini\arrow-down.png" />
+    <Content Include="images\icons\mini\arrow.png" />
+    <Content Include="images\icons\mini\close-opacity-21.png" />
+    <Content Include="images\icons\mini\close-opacity-42.png" />
+    <Content Include="images\icons\mini\close-stats-hover.png" />
+    <Content Include="images\icons\mini\close-stats.png" />
+    <Content Include="images\icons\mini\gallery-icon.png" />
+    <Content Include="images\icons\mini\plus.gif" />
+    <Content Include="images\icons\mini\stats-arrow-top.png" />
+    <Content Include="images\icons\shortcut\ballon.png" />
+    <Content Include="images\icons\shortcut\clock.png" />
+    <Content Include="images\icons\shortcut\copy.png" />
+    <Content Include="images\icons\shortcut\dashboard.png" />
+    <Content Include="images\icons\shortcut\file.png" />
+    <Content Include="images\icons\shortcut\folder.png" />
+    <Content Include="images\icons\shortcut\message.png" />
+    <Content Include="images\icons\shortcut\plus.png" />
+    <Content Include="images\icons\shortcut\print.png" />
+    <Content Include="images\icons\shortcut\question.png" />
+    <Content Include="images\icons\shortcut\refresh.png" />
+    <Content Include="images\icons\shortcut\rss.png" />
+    <Content Include="images\icons\shortcut\search.png" />
+    <Content Include="images\icons\shortcut\tags.png" />
+    <Content Include="images\icons\sidemenu\arrow_down.png" />
+    <Content Include="images\icons\sidemenu\arrow_left.png" />
+    <Content Include="images\icons\sidemenu\arrow_up.png" />
+    <Content Include="images\icons\sidemenu\attach.png" />
+    <Content Include="images\icons\sidemenu\badge_rss.png" />
+    <Content Include="images\icons\sidemenu\calculator.png" />
+    <Content Include="images\icons\sidemenu\calendar.png" />
+    <Content Include="images\icons\sidemenu\cd.png" />
+    <Content Include="images\icons\sidemenu\comment.png" />
+    <Content Include="images\icons\sidemenu\comment_add.png" />
+    <Content Include="images\icons\sidemenu\comment_delete.png" />
+    <Content Include="images\icons\sidemenu\comment_edit.png" />
+    <Content Include="images\icons\sidemenu\control_play.png" />
+    <Content Include="images\icons\sidemenu\copy.png" />
+    <Content Include="images\icons\sidemenu\disc.png" />
+    <Content Include="images\icons\sidemenu\download.png" />
+    <Content Include="images\icons\sidemenu\error.png" />
+    <Content Include="images\icons\sidemenu\file.png" />
+    <Content Include="images\icons\sidemenu\file_add.png" />
+    <Content Include="images\icons\sidemenu\file_delete.png" />
+    <Content Include="images\icons\sidemenu\file_edit.png" />
+    <Content Include="images\icons\sidemenu\file_move.png" />
+    <Content Include="images\icons\sidemenu\heart.png" />
+    <Content Include="images\icons\sidemenu\image.png" />
+    <Content Include="images\icons\sidemenu\info.png" />
+    <Content Include="images\icons\sidemenu\ipod.png" />
+    <Content Include="images\icons\sidemenu\key.png" />
+    <Content Include="images\icons\sidemenu\laptop.png" />
+    <Content Include="images\icons\sidemenu\lock.png" />
+    <Content Include="images\icons\sidemenu\lock_open.png" />
+    <Content Include="images\icons\sidemenu\magnify.png" />
+    <Content Include="images\icons\sidemenu\mail.png" />
+    <Content Include="images\icons\sidemenu\photo.png" />
+    <Content Include="images\icons\sidemenu\print.png" />
+    <Content Include="images\icons\sidemenu\star.png" />
+    <Content Include="images\icons\sidemenu\trash.png" />
+    <Content Include="images\icons\sidemenu\trolley.png" />
+    <Content Include="images\icons\sidemenu\unzip.png" />
+    <Content Include="images\icons\sidemenu\upload.png" />
+    <Content Include="images\icons\sidemenu\user.png" />
+    <Content Include="images\icons\sidemenu\user_add.png" />
+    <Content Include="images\icons\sidemenu\user_delete.png" />
+    <Content Include="images\icons\sidemenu\user_edit.png" />
+    <Content Include="images\icons\sidemenu\vcard.png" />
+    <Content Include="images\icons\sidemenu\video.png" />
+    <Content Include="images\icons\sidemenu\zip.png" />
+    <Content Include="images\iphone-style-switches\switch.gif" />
+    <Content Include="images\jwysiwyg\jquery.wysiwyg.gif" />
+    <Content Include="images\jwysiwyg\jquery.wysiwyg.jpg" />
+    <Content Include="images\loading\1.gif" />
+    <Content Include="images\loading\10.gif" />
+    <Content Include="images\loading\11.gif" />
+    <Content Include="images\loading\2.gif" />
+    <Content Include="images\loading\3.gif" />
+    <Content Include="images\loading\4.gif" />
+    <Content Include="images\loading\5.gif" />
+    <Content Include="images\loading\6.gif" />
+    <Content Include="images\loading\7.gif" />
+    <Content Include="images\loading\8.gif" />
+    <Content Include="images\loading\9.gif" />
+    <Content Include="images\login-button.png" />
+    <Content Include="images\login-form-body-bg.png" />
+    <Content Include="images\login-title.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\Logos\1NabbirLogo.jpg" />
+    <Content Include="images\Logos\21ILACMRA.jpg" />
+    <Content Include="images\Logos\22SAMMcolor.jpg" />
+    <Content Include="images\Logos\3MoodyInternational.png" />
+    <Content Include="images\Logos\45MoodyInternationals2.png" />
+    <Content Include="images\Logos\65Spractices.png" />
+    <Content Include="images\Logos\7GIPLogo.PNG" />
+    <Content Include="images\main-bg.png" />
+    <Content Include="images\page-title-minidot.png" />
+    <Content Include="images\page-wrap-libg.png" />
+    <Content Include="images\pagewrapbg.png" />
+    <Content Include="images\password-input.png" />
+    <Content Include="images\PerformanceReports.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="images\prettyPhoto\default\loader.gif" />
+    <Content Include="images\prettyPhoto\default\sprite.png" />
+    <Content Include="images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="images\profileboxbg-hover.png" />
+    <Content Include="images\profileboxbg.png" />
+    <Content Include="images\qballon.png" />
+    <Content Include="images\qbutton.png" />
+    <Content Include="images\searchbox-bg.png" />
+    <Content Include="images\searchbox-hover.png" />
+    <Content Include="images\searchbox.png" />
+    <Content Include="images\shortcut-hover.png" />
+    <Content Include="images\shortcut-normal.png" />
+    <Content Include="images\simple-tips-bg.png" />
+    <Content Include="images\simplebox-dot.png" />
+    <Content Include="images\simplebox-title-bg.png" />
+    <Content Include="images\st-forminput-bg.png" />
+    <Content Include="images\stats-bg.png" />
+    <Content Include="images\tableshorter\asc.gif" />
+    <Content Include="images\tableshorter\bg.gif" />
+    <Content Include="images\tableshorter\desc.gif" />
+    <Content Include="images\tableshorter\titlebg.png" />
+    <Content Include="images\toogle-message-bg.png" />
+    <Content Include="images\transparent.gif" />
+    <Content Include="images\uniform\bg-input-focus.png" />
+    <Content Include="images\uniform\bg-input.png" />
+    <Content Include="images\uniform\sprite.png" />
+    <Content Include="images\username-input.png" />
+    <Content Include="LabAssistants\ActiveTestList.aspx" />
+    <Content Include="LabAssistants\AddEditAppoint.aspx" />
+    <Content Include="LabAssistants\AddEditEvent.aspx" />
+    <Content Include="LabAssistants\AddEditIndustry.aspx" />
+    <Content Include="LabAssistants\AddEditSpecification.aspx" />
+    <Content Include="LabAssistants\AddEditTestParameterInfo.aspx" />
+    <Content Include="LabAssistants\Appointment.aspx" />
+    <Content Include="LabAssistants\ClientName.asmx" />
+    <Content Include="LabAssistants\Dashboard.aspx" />
+    <Content Include="LabAssistants\DashboardParameter.aspx" />
+    <Content Include="LabAssistants\DashboardSpecification.aspx" />
+    <Content Include="LabAssistants\DeletAppointment.aspx" />
+    <Content Include="LabAssistants\DeleteActiveTest.aspx" />
+    <Content Include="LabAssistants\DeleteEvent.aspx" />
+    <Content Include="LabAssistants\DeleteIndustry.aspx" />
+    <Content Include="LabAssistants\DeleteSpecification.aspx" />
+    <Content Include="LabAssistants\DeleteTestParameter.aspx" />
+    <Content Include="LabAssistants\EmailJobcard.aspx" />
+    <Content Include="LabAssistants\IndustryList.aspx" />
+    <Content Include="LabAssistants\Jobcard.aspx" />
+    <Content Include="LabAssistants\jobcardPrintabe.aspx" />
+    <Content Include="LabAssistants\ListAllAppointment.aspx" />
+    <Content Include="LabAssistants\ListAllEvent.aspx" />
+    <Content Include="LabAssistants\ListSpecification.aspx" />
+    <Content Include="LabAssistants\ListTestMaster.aspx" />
+    <Content Include="LabAssistants\SamplerTestMaster.aspx" />
+    <Content Include="LabAssistants\Schedule.aspx" />
+    <Content Include="LabAssistants\TestMaster.aspx" />
+    <Content Include="LabAssistants\TestParmeterList.aspx" />
+    <Content Include="LabAssistants\TimePicker.ascx" />
+    <Content Include="Manager\ActiveTestList.aspx" />
+    <Content Include="Manager\AddEditJobTestInfo.aspx" />
+    <Content Include="Manager\ClientList.aspx" />
+    <Content Include="Manager\COAEmail.aspx" />
+    <Content Include="Manager\COAPrintable.aspx" />
+    <Content Include="Manager\Dashboard.aspx" />
+    <Content Include="Manager\DashboardParameter.aspx" />
+    <Content Include="Manager\DashboardSpecification.aspx" />
+    <Content Include="Manager\EmailJobcard.aspx" />
+    <Content Include="Manager\ErrorPage.aspx" />
+    <Content Include="Manager\Jobcard.aspx" />
+    <Content Include="Manager\jobcardPrintabe.aspx" />
+    <Content Include="JobCustomControl\AddEditJobTestInfo.ascx" />
+    <Content Include="JobCustomControl\ViewArchiveJob.ascx" />
+    <Content Include="JobCustomControl\EditJobStatus.ascx" />
+    <Content Include="JobCustomControl\UpdateJobStatus.ascx" />
+    <Content Include="Sampler\AddEditAppoint.aspx" />
+    <Content Include="Sampler\AddEditEvent.aspx" />
+    <Content Include="Sampler\AddJob.aspx" />
+    <Content Include="Sampler\AddJobTestBottleDetail.aspx" />
+    <Content Include="Sampler\Appointment.aspx" />
+    <Content Include="Sampler\Dashboard.aspx" />
+    <Content Include="Sampler\DashboardParameter.aspx" />
+    <Content Include="Sampler\DashboardSpecification.aspx" />
+    <Content Include="Sampler\DeletAppointment.aspx" />
+    <Content Include="Sampler\DeleteEvent.aspx" />
+    <Content Include="Sampler\DeleteJobInfo.aspx" />
+    <Content Include="Sampler\EmailJobCard.aspx" />
+    <Content Include="Sampler\ListAllAppointment.aspx" />
+    <Content Include="Sampler\ListAllEvent.aspx" />
+    <Content Include="Sampler\ListTestMaster.aspx" />
+    <Content Include="Sampler\JobList.aspx" />
+    <Content Include="Sampler\PrintJob.aspx" />
+    <Content Include="Sampler\Schedule.aspx" />
+    <Content Include="Sampler\TestMaster.aspx" />
+    <Content Include="Sampler\TimePicker.ascx" />
+    <Content Include="Sampler\ViewJob.aspx" />
+    <Content Include="SampleScheduler\AddEventControl.ascx" />
+    <Content Include="SampleScheduler\Events.aspx" />
+    <Content Include="SampleScheduler\ListAllEventControl.ascx" />
+    <Content Include="SampleScheduler\PrintableEventList.aspx" />
+    <Content Include="SampleScheduler\ScheduleControl.ascx" />
+    <Content Include="Scripts\analytics.js" />
+    <Content Include="Scripts\Copy of custom_jquery.js" />
+    <Content Include="Scripts\custom_jquery.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\jquery-1.5.2.min.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-settings.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery.bind.js" />
+    <Content Include="Scripts\jquery.contextMenu.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.datePicker.js" />
+    <Content Include="Scripts\jquery.dimensions.js" />
+    <Content Include="Scripts\jquery.filestyle.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.pngFix.pack.js" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.ptTimeSelect.js" />
+    <Content Include="Scripts\jquery.selectbox-0.5.js" />
+    <Content Include="Scripts\jquery.selectbox-0.5_style_2.js" />
+    <Content Include="Scripts\jquery.selectbox-0.5_style_3.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.tipsy.js" />
+    <Content Include="Scripts\jquery.tooltip.js" />
+    <Content Include="Scripts\jquery.ui.accordion.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.slider.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.uniform.min.js" />
+    <Content Include="Scripts\jquery.usermode.js" />
+    <Content Include="Scripts\jquery.wysiwyg.js" />
+    <Content Include="Scripts\jtablesite.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\overlib.js" />
+    <Content Include="Scripts\popup.js" />
+    <Content Include="Scripts\raphael.js" />
+    <Content Include="Scripts\toogle.js" />
+    <Content Include="Scripts\ui.checkbox.js" />
+    <Content Include="Scripts\ui.core.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="SpecificationControl\AddEditSpecification.ascx" />
+    <Content Include="SpecificationControl\ListSpecification.ascx" />
+    <Content Include="Styles\datatable_jui.css" />
+    <Content Include="Styles\fullcalendar.css" />
+    <Content Include="Styles\grid.css" />
+    <Content Include="Styles\ie7-style.css" />
+    <Content Include="Styles\iphone-style-switches.css" />
+    <Content Include="Styles\jquery-plugin-base.css" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_glass_75_e6e6e6_1×4030.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jquery.ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\jquery.ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery.ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jquery.ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery.ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\jquery.ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery.ui\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.all.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.base.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.button.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.core.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery.ui\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery.wysiwyg.css" />
+    <Content Include="Styles\menu.css" />
+    <Content Include="Styles\prettyphoto-style.css" />
+    <Content Include="Styles\reset.css" />
+    <Content Include="Styles\root.css" />
+    <Content Include="Styles\tableshorter-theme.css" />
+    <Content Include="Styles\tipsy-style.css" />
+    <Content Include="Styles\typography.css" />
+    <Content Include="Styles\uniform.default.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddEditAppoint.aspx.cs">
+      <DependentUpon>AddEditAppoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditAppoint.aspx.designer.cs">
+      <DependentUpon>AddEditAppoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditBottle.aspx.cs">
+      <DependentUpon>AddEditBottle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditBottle.aspx.designer.cs">
+      <DependentUpon>AddEditBottle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditCustomerTestParameters.aspx.cs">
+      <DependentUpon>AddEditCustomerTestParameters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditCustomerTestParameters.aspx.designer.cs">
+      <DependentUpon>AddEditCustomerTestParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditEvent.aspx.cs">
+      <DependentUpon>AddEditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditEvent.aspx.designer.cs">
+      <DependentUpon>AddEditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditIndustry.aspx.cs">
+      <DependentUpon>AddEditIndustry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditIndustry.aspx.designer.cs">
+      <DependentUpon>AddEditIndustry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditPackingInfo.aspx.cs">
+      <DependentUpon>AddEditPackingInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditPackingInfo.aspx.designer.cs">
+      <DependentUpon>AddEditPackingInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditJobTestInfo.aspx.cs">
+      <DependentUpon>AddEditJobTestInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditJobTestInfo.aspx.designer.cs">
+      <DependentUpon>AddEditJobTestInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditSpecification.aspx.cs">
+      <DependentUpon>AddEditSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditSpecification.aspx.designer.cs">
+      <DependentUpon>AddEditSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddJob.aspx.cs">
+      <DependentUpon>AddJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddJob.aspx.designer.cs">
+      <DependentUpon>AddJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditTestParameterInfo.aspx.cs">
+      <DependentUpon>AddEditTestParameterInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditTestParameterInfo.aspx.designer.cs">
+      <DependentUpon>AddEditTestParameterInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddJobTestBottleDetail.aspx.cs">
+      <DependentUpon>AddJobTestBottleDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddJobTestBottleDetail.aspx.designer.cs">
+      <DependentUpon>AddJobTestBottleDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Appointment.aspx.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Appointment.aspx.designer.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClientName.asmx.cs">
+      <DependentUpon>ClientName.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Admin\ArchiveJobnList.aspx.cs">
+      <DependentUpon>ArchiveJobnList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ArchiveJobnList.aspx.designer.cs">
+      <DependentUpon>ArchiveJobnList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\COAEmail.aspx.cs">
+      <DependentUpon>COAEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\COAEmail.aspx.designer.cs">
+      <DependentUpon>COAEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\COAPrintable.aspx.cs">
+      <DependentUpon>COAPrintable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\COAPrintable.aspx.designer.cs">
+      <DependentUpon>COAPrintable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateJobWizard.aspx.cs">
+      <DependentUpon>CreateJobWizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateJobWizard.aspx.designer.cs">
+      <DependentUpon>CreateJobWizard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DashboardAdmin.aspx.cs">
+      <DependentUpon>DashboardAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DashboardAdmin.aspx.designer.cs">
+      <DependentUpon>DashboardAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DashboardParameter.aspx.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DashboardParameter.aspx.designer.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DashboardSpecification.aspx.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DashboardSpecification.aspx.designer.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeletAppointment.aspx.cs">
+      <DependentUpon>DeletAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeletAppointment.aspx.designer.cs">
+      <DependentUpon>DeletAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteBottle.aspx.cs">
+      <DependentUpon>DeleteBottle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteBottle.aspx.designer.cs">
+      <DependentUpon>DeleteBottle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteJobTestBottleDetail.aspx.cs">
+      <DependentUpon>DeleteJobTestBottleDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteJobTestBottleDetail.aspx.designer.cs">
+      <DependentUpon>DeleteJobTestBottleDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteSpecification.aspx.cs">
+      <DependentUpon>DeleteSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteSpecification.aspx.designer.cs">
+      <DependentUpon>DeleteSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListAllAppointment.aspx.cs">
+      <DependentUpon>ListAllAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListAllAppointment.aspx.designer.cs">
+      <DependentUpon>ListAllAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListSampleBottle.aspx.cs">
+      <DependentUpon>ListSampleBottle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListSampleBottle.aspx.designer.cs">
+      <DependentUpon>ListSampleBottle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListSpecification.aspx.cs">
+      <DependentUpon>ListSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListSpecification.aspx.designer.cs">
+      <DependentUpon>ListSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManagementDashboards.aspx.cs">
+      <DependentUpon>ManagementDashboards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManagementDashboards.aspx.designer.cs">
+      <DependentUpon>ManagementDashboards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PerformanceReports.aspx.cs">
+      <DependentUpon>PerformanceReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PerformanceReports.aspx.designer.cs">
+      <DependentUpon>PerformanceReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\JobList.aspx.cs">
+      <DependentUpon>JobList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\JobList.aspx.designer.cs">
+      <DependentUpon>JobList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecordHistoryList.aspx.cs">
+      <DependentUpon>RecordHistoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecordHistoryList.aspx.designer.cs">
+      <DependentUpon>RecordHistoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewArchiveJob.aspx.cs">
+      <DependentUpon>ViewArchiveJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewArchiveJob.aspx.designer.cs">
+      <DependentUpon>ViewArchiveJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteEvent.aspx.cs">
+      <DependentUpon>DeleteEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteEvent.aspx.designer.cs">
+      <DependentUpon>DeleteEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListAllEvent.aspx.cs">
+      <DependentUpon>ListAllEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListAllEvent.aspx.designer.cs">
+      <DependentUpon>ListAllEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteActiveTest.aspx.cs">
+      <DependentUpon>DeleteActiveTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteActiveTest.aspx.designer.cs">
+      <DependentUpon>DeleteActiveTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteClient.aspx.cs">
+      <DependentUpon>DeleteClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteClient.aspx.designer.cs">
+      <DependentUpon>DeleteClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteCustomerTestParameters.aspx.cs">
+      <DependentUpon>DeleteCustomerTestParameters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteCustomerTestParameters.aspx.designer.cs">
+      <DependentUpon>DeleteCustomerTestParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteIndustry.aspx.cs">
+      <DependentUpon>DeleteIndustry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteIndustry.aspx.designer.cs">
+      <DependentUpon>DeleteIndustry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeletePackingInfo.aspx.cs">
+      <DependentUpon>DeletePackingInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeletePackingInfo.aspx.designer.cs">
+      <DependentUpon>DeletePackingInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteJobDetail.aspx.cs">
+      <DependentUpon>DeleteJobDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteJobDetail.aspx.designer.cs">
+      <DependentUpon>DeleteJobDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteJobInfo.aspx.cs">
+      <DependentUpon>DeleteJobInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteJobInfo.aspx.designer.cs">
+      <DependentUpon>DeleteJobInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteTestParameter.aspx.cs">
+      <DependentUpon>DeleteTestParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteTestParameter.aspx.designer.cs">
+      <DependentUpon>DeleteTestParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditJob.aspx.cs">
+      <DependentUpon>EditJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditJob.aspx.designer.cs">
+      <DependentUpon>EditJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EmailJobcard.aspx.cs">
+      <DependentUpon>EmailJobcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EmailJobcard.aspx.designer.cs">
+      <DependentUpon>EmailJobcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\jobcardPrintabe.aspx.cs">
+      <DependentUpon>jobcardPrintabe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\jobcardPrintabe.aspx.designer.cs">
+      <DependentUpon>jobcardPrintabe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListTestMaster.aspx.cs">
+      <DependentUpon>ListTestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListTestMaster.aspx.designer.cs">
+      <DependentUpon>ListTestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintHelper.cs" />
+    <Compile Include="Admin\PrintJob.aspx.cs">
+      <DependentUpon>PrintJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintJob.aspx.designer.cs">
+      <DependentUpon>PrintJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\printTestPage.aspx.cs">
+      <DependentUpon>printTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\printTestPage.aspx.designer.cs">
+      <DependentUpon>printTestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SamplePackingList.aspx.cs">
+      <DependentUpon>SamplePackingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SamplePackingList.aspx.designer.cs">
+      <DependentUpon>SamplePackingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Schedule.aspx.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Schedule.aspx.designer.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TestMaster.aspx.cs">
+      <DependentUpon>TestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TestMaster.aspx.designer.cs">
+      <DependentUpon>TestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TestParmeterList.aspx.cs">
+      <DependentUpon>TestParmeterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TestParmeterList.aspx.designer.cs">
+      <DependentUpon>TestParmeterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditClient.aspx.cs">
+      <DependentUpon>AddEditClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditClient.aspx.designer.cs">
+      <DependentUpon>AddEditClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEditUser.aspx.cs">
+      <DependentUpon>AddEditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEditUser.aspx.designer.cs">
+      <DependentUpon>AddEditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClientList.aspx.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClientList.aspx.designer.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IndustryList.aspx.cs">
+      <DependentUpon>IndustryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IndustryList.aspx.designer.cs">
+      <DependentUpon>IndustryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Jobcard.aspx.cs">
+      <DependentUpon>Jobcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Jobcard.aspx.designer.cs">
+      <DependentUpon>Jobcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TimePicker.ascx.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TimePicker.ascx.designer.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateRewardValue.aspx.cs">
+      <DependentUpon>UpdateRewardValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateRewardValue.aspx.designer.cs">
+      <DependentUpon>UpdateRewardValue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateSmtpSetting.aspx.cs">
+      <DependentUpon>UpdateSmtpSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateSmtpSetting.aspx.designer.cs">
+      <DependentUpon>UpdateSmtpSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewJob.aspx.cs">
+      <DependentUpon>ViewJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewJob.aspx.designer.cs">
+      <DependentUpon>ViewJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointScheduler\AddEditAppointControl.ascx.cs">
+      <DependentUpon>AddEditAppointControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointScheduler\AddEditAppointControl.ascx.designer.cs">
+      <DependentUpon>AddEditAppointControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointScheduler\AppointControl.aspx.cs">
+      <DependentUpon>AppointControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointScheduler\AppointControl.aspx.designer.cs">
+      <DependentUpon>AppointControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointScheduler\AppointScheduleControl.ascx.cs">
+      <DependentUpon>AppointScheduleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointScheduler\AppointScheduleControl.ascx.designer.cs">
+      <DependentUpon>AppointScheduleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointScheduler\ListAllAppointControl.ascx.cs">
+      <DependentUpon>ListAllAppointControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointScheduler\ListAllAppointControl.ascx.designer.cs">
+      <DependentUpon>ListAllAppointControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DBController\AppointmentController.cs" />
+    <Compile Include="DBController\EventsController.cs" />
+    <Compile Include="DBController\SampleAssociationController.cs" />
+    <Compile Include="DBController\BottleController.cs" />
+    <Compile Include="DBController\SampleDetailController.cs" />
+    <Compile Include="DBController\JobTestBottleDetailController.cs" />
+    <Compile Include="DBController\SpecificationController.cs" />
+    <Compile Include="DBController\DashboardController.cs" />
+    <Compile Include="DBController\AppointmentListController.cs" />
+    <Compile Include="DBController\JobController.cs" />
+    <Compile Include="DBController\DbController.cs" />
+    <Compile Include="DBModel\ActiveTestsInfo.cs" />
+    <Compile Include="DBModel\Bottle.cs" />
+    <Compile Include="DBModel\AppointmentList.cs" />
+    <Compile Include="DBModel\Appointment.cs" />
+    <Compile Include="DBModel\ContactInfo.cs" />
+    <Compile Include="DBModel\IntermediateCustomerContact.cs" />
+    <Compile Include="DBModel\PointsInfo.cs" />
+    <Compile Include="DBModel\RecordHistory.cs" />
+    <Compile Include="DBModel\SampleDetail.cs" />
+    <Compile Include="DBModel\SampleAssociation.cs" />
+    <Compile Include="DBModel\JobTestBottleDetail.cs" />
+    <Compile Include="DBModel\JobDetailArchive.cs" />
+    <Compile Include="DBModel\JobInfoArchive.cs" />
+    <Compile Include="DBModel\RewardValue.cs" />
+    <Compile Include="DBModel\Events.cs" />
+    <Compile Include="DBModel\JobDetail.cs" />
+    <Compile Include="DBModel\JobInfo.cs" />
+    <Compile Include="DBModel\CustomerTestParameters.cs" />
+    <Compile Include="DBModel\Specification.cs" />
+    <Compile Include="DBModel\CustomerInfo.cs" />
+    <Compile Include="DBModel\IndustryInfo.cs" />
+    <Compile Include="DBModel\IndustryTestInfo.cs" />
+    <Compile Include="DBModel\PackingInfo.cs" />
+    <Compile Include="DBModel\SmtpSetting.cs" />
+    <Compile Include="DBModel\SystemUsers.cs" />
+    <Compile Include="DBModel\TestParam.cs" />
+    <Compile Include="DBModel\TestParameterInfo.cs" />
+    <Compile Include="DBModel\TestResult.cs" />
+    <Compile Include="DBModel\TestResultsInfo.cs" />
+    <Compile Include="DBPersistence\PersistenceManager.cs" />
+    <Compile Include="DBPersistence\SessionAction.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\ActiveTestList.aspx.cs">
+      <DependentUpon>ActiveTestList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\ActiveTestList.aspx.designer.cs">
+      <DependentUpon>ActiveTestList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditAppoint.aspx.cs">
+      <DependentUpon>AddEditAppoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditAppoint.aspx.designer.cs">
+      <DependentUpon>AddEditAppoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditEvent.aspx.cs">
+      <DependentUpon>AddEditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditEvent.aspx.designer.cs">
+      <DependentUpon>AddEditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditIndustry.aspx.cs">
+      <DependentUpon>AddEditIndustry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditIndustry.aspx.designer.cs">
+      <DependentUpon>AddEditIndustry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditSpecification.aspx.cs">
+      <DependentUpon>AddEditSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditSpecification.aspx.designer.cs">
+      <DependentUpon>AddEditSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditTestParameterInfo.aspx.cs">
+      <DependentUpon>AddEditTestParameterInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\AddEditTestParameterInfo.aspx.designer.cs">
+      <DependentUpon>AddEditTestParameterInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\Appointment.aspx.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\Appointment.aspx.designer.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\ClientName.asmx.cs">
+      <DependentUpon>ClientName.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DashboardParameter.aspx.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DashboardParameter.aspx.designer.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DashboardSpecification.aspx.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DashboardSpecification.aspx.designer.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DeletAppointment.aspx.cs">
+      <DependentUpon>DeletAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DeletAppointment.aspx.designer.cs">
+      <DependentUpon>DeletAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteActiveTest.aspx.cs">
+      <DependentUpon>DeleteActiveTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteActiveTest.aspx.designer.cs">
+      <DependentUpon>DeleteActiveTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteEvent.aspx.cs">
+      <DependentUpon>DeleteEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteEvent.aspx.designer.cs">
+      <DependentUpon>DeleteEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteIndustry.aspx.cs">
+      <DependentUpon>DeleteIndustry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteIndustry.aspx.designer.cs">
+      <DependentUpon>DeleteIndustry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteSpecification.aspx.cs">
+      <DependentUpon>DeleteSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteSpecification.aspx.designer.cs">
+      <DependentUpon>DeleteSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteTestParameter.aspx.cs">
+      <DependentUpon>DeleteTestParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\DeleteTestParameter.aspx.designer.cs">
+      <DependentUpon>DeleteTestParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\EmailJobcard.aspx.cs">
+      <DependentUpon>EmailJobcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\EmailJobcard.aspx.designer.cs">
+      <DependentUpon>EmailJobcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\IndustryList.aspx.cs">
+      <DependentUpon>IndustryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\IndustryList.aspx.designer.cs">
+      <DependentUpon>IndustryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\Jobcard.aspx.cs">
+      <DependentUpon>Jobcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\Jobcard.aspx.designer.cs">
+      <DependentUpon>Jobcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\jobcardPrintabe.aspx.cs">
+      <DependentUpon>jobcardPrintabe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\jobcardPrintabe.aspx.designer.cs">
+      <DependentUpon>jobcardPrintabe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\LabAssistants.Master.cs">
+      <DependentUpon>LabAssistants.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\LabAssistants.Master.designer.cs">
+      <DependentUpon>LabAssistants.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\ListAllAppointment.aspx.cs">
+      <DependentUpon>ListAllAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\ListAllAppointment.aspx.designer.cs">
+      <DependentUpon>ListAllAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\ListAllEvent.aspx.cs">
+      <DependentUpon>ListAllEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\ListAllEvent.aspx.designer.cs">
+      <DependentUpon>ListAllEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\ListSpecification.aspx.cs">
+      <DependentUpon>ListSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\ListSpecification.aspx.designer.cs">
+      <DependentUpon>ListSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\ListTestMaster.aspx.cs">
+      <DependentUpon>ListTestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\ListTestMaster.aspx.designer.cs">
+      <DependentUpon>ListTestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\PrintHelper.cs" />
+    <Compile Include="LabAssistants\SamplerTestMaster.aspx.cs">
+      <DependentUpon>SamplerTestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\SamplerTestMaster.aspx.designer.cs">
+      <DependentUpon>SamplerTestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\Schedule.aspx.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\Schedule.aspx.designer.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\TestMaster.aspx.cs">
+      <DependentUpon>TestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\TestMaster.aspx.designer.cs">
+      <DependentUpon>TestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\TestParmeterList.aspx.cs">
+      <DependentUpon>TestParmeterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\TestParmeterList.aspx.designer.cs">
+      <DependentUpon>TestParmeterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistants\TimePicker.ascx.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabAssistants\TimePicker.ascx.designer.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ActiveTestList.aspx.cs">
+      <DependentUpon>ActiveTestList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ActiveTestList.aspx.designer.cs">
+      <DependentUpon>ActiveTestList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\AddEditJobTestInfo.aspx.cs">
+      <DependentUpon>AddEditJobTestInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\AddEditJobTestInfo.aspx.designer.cs">
+      <DependentUpon>AddEditJobTestInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ClientList.aspx.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ClientList.aspx.designer.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\COAEmail.aspx.cs">
+      <DependentUpon>COAEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\COAEmail.aspx.designer.cs">
+      <DependentUpon>COAEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\COAPrintable.aspx.cs">
+      <DependentUpon>COAPrintable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\COAPrintable.aspx.designer.cs">
+      <DependentUpon>COAPrintable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DashboardParameter.aspx.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\DashboardParameter.aspx.designer.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DashboardSpecification.aspx.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\DashboardSpecification.aspx.designer.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\EmailJobcard.aspx.cs">
+      <DependentUpon>EmailJobcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\EmailJobcard.aspx.designer.cs">
+      <DependentUpon>EmailJobcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Jobcard.aspx.cs">
+      <DependentUpon>Jobcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Jobcard.aspx.designer.cs">
+      <DependentUpon>Jobcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\jobcardPrintabe.aspx.cs">
+      <DependentUpon>jobcardPrintabe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\jobcardPrintabe.aspx.designer.cs">
+      <DependentUpon>jobcardPrintabe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager.Master.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Manager.Master.designer.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\PrintHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JobCustomControl\AddEditJobTestInfo.ascx.cs">
+      <DependentUpon>AddEditJobTestInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobCustomControl\AddEditJobTestInfo.ascx.designer.cs">
+      <DependentUpon>AddEditJobTestInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JobCustomControl\ViewArchiveJob.ascx.cs">
+      <DependentUpon>ViewArchiveJob.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobCustomControl\ViewArchiveJob.ascx.designer.cs">
+      <DependentUpon>ViewArchiveJob.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JobCustomControl\EditJobStatus.ascx.cs">
+      <DependentUpon>EditJobStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobCustomControl\EditJobStatus.ascx.designer.cs">
+      <DependentUpon>EditJobStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JobCustomControl\UpdateJobStatus.ascx.cs">
+      <DependentUpon>UpdateJobStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobCustomControl\UpdateJobStatus.ascx.designer.cs">
+      <DependentUpon>UpdateJobStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\AddEditAppoint.aspx.cs">
+      <DependentUpon>AddEditAppoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\AddEditAppoint.aspx.designer.cs">
+      <DependentUpon>AddEditAppoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\AddEditEvent.aspx.cs">
+      <DependentUpon>AddEditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\AddEditEvent.aspx.designer.cs">
+      <DependentUpon>AddEditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\AddJob.aspx.cs">
+      <DependentUpon>AddJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\AddJob.aspx.designer.cs">
+      <DependentUpon>AddJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\AddJobTestBottleDetail.aspx.cs">
+      <DependentUpon>AddJobTestBottleDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\AddJobTestBottleDetail.aspx.designer.cs">
+      <DependentUpon>AddJobTestBottleDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\Appointment.aspx.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\Appointment.aspx.designer.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\DashboardParameter.aspx.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\DashboardParameter.aspx.designer.cs">
+      <DependentUpon>DashboardParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\DashboardSpecification.aspx.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\DashboardSpecification.aspx.designer.cs">
+      <DependentUpon>DashboardSpecification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\DeletAppointment.aspx.cs">
+      <DependentUpon>DeletAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\DeletAppointment.aspx.designer.cs">
+      <DependentUpon>DeletAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\DeleteEvent.aspx.cs">
+      <DependentUpon>DeleteEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\DeleteEvent.aspx.designer.cs">
+      <DependentUpon>DeleteEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\DeleteJobInfo.aspx.cs">
+      <DependentUpon>DeleteJobInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\DeleteJobInfo.aspx.designer.cs">
+      <DependentUpon>DeleteJobInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\EmailJobCard.aspx.cs">
+      <DependentUpon>EmailJobCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\EmailJobCard.aspx.designer.cs">
+      <DependentUpon>EmailJobCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\ListAllAppointment.aspx.cs">
+      <DependentUpon>ListAllAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\ListAllAppointment.aspx.designer.cs">
+      <DependentUpon>ListAllAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\ListAllEvent.aspx.cs">
+      <DependentUpon>ListAllEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\ListAllEvent.aspx.designer.cs">
+      <DependentUpon>ListAllEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\ListTestMaster.aspx.cs">
+      <DependentUpon>ListTestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\ListTestMaster.aspx.designer.cs">
+      <DependentUpon>ListTestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\JobList.aspx.cs">
+      <DependentUpon>JobList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\JobList.aspx.designer.cs">
+      <DependentUpon>JobList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\PrintHelper.cs" />
+    <Compile Include="Sampler\PrintJob.aspx.cs">
+      <DependentUpon>PrintJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\PrintJob.aspx.designer.cs">
+      <DependentUpon>PrintJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\Sampler.Master.cs">
+      <DependentUpon>Sampler.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\Sampler.Master.designer.cs">
+      <DependentUpon>Sampler.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\Schedule.aspx.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\Schedule.aspx.designer.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\TestMaster.aspx.cs">
+      <DependentUpon>TestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\TestMaster.aspx.designer.cs">
+      <DependentUpon>TestMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\TimePicker.ascx.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\TimePicker.ascx.designer.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sampler\ViewJob.aspx.cs">
+      <DependentUpon>ViewJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sampler\ViewJob.aspx.designer.cs">
+      <DependentUpon>ViewJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleScheduler\AddEventControl.ascx.cs">
+      <DependentUpon>AddEventControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleScheduler\AddEventControl.ascx.designer.cs">
+      <DependentUpon>AddEventControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleScheduler\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleScheduler\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleScheduler\ListAllEventControl.ascx.cs">
+      <DependentUpon>ListAllEventControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleScheduler\ListAllEventControl.ascx.designer.cs">
+      <DependentUpon>ListAllEventControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleScheduler\PrintableEventList.aspx.cs">
+      <DependentUpon>PrintableEventList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleScheduler\PrintableEventList.aspx.designer.cs">
+      <DependentUpon>PrintableEventList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleScheduler\ScheduleControl.ascx.cs">
+      <DependentUpon>ScheduleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleScheduler\ScheduleControl.ascx.designer.cs">
+      <DependentUpon>ScheduleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificationControl\AddEditSpecification.ascx.cs">
+      <DependentUpon>AddEditSpecification.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecificationControl\AddEditSpecification.ascx.designer.cs">
+      <DependentUpon>AddEditSpecification.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificationControl\ListSpecification.ascx.cs">
+      <DependentUpon>ListSpecification.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecificationControl\ListSpecification.ascx.designer.cs">
+      <DependentUpon>ListSpecification.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LabAssistants\LabAssistants.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons\16x16\.DS_Store" />
+    <None Include="images\icons\button\.DS_Store" />
+    <None Include="images\icons\dashbutton\.DS_Store" />
+    <None Include="images\icons\error\.DS_Store" />
+    <None Include="images\icons\header\.DS_Store" />
+    <None Include="images\icons\mini\.DS_Store" />
+    <None Include="images\icons\shortcut\.DS_Store" />
+    <None Include="images\uniform\.DS_Store" />
+    <Content Include="Sampler\Sampler.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manager\Manager.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25133</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

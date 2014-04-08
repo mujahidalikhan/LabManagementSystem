@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <class name="Specification" table="Specification" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="SpecificationId">
+      <column name="SpecificationId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+    <property name="SpecificationName"/>
+    
+    <many-to-one name="TestId" column="TestId" />
+    
+    
+    <property name="StdA"/>
+    <property name="StdB"/>
+   <property name="Others"/>
+  
+  </class>
+
+</hibernate-mapping>

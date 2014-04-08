@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LabAssistants.master.cs" Inherits="LMIS.LabAssistants.LabAssistants" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab Management System</title>
+    <!-- Reset -->
+    <link rel="stylesheet" type="text/css" href="../Styles/reset.css" />
+    <!-- Main Style File -->
+    <link rel="stylesheet" type="text/css" href="../Styles/root.css" />
+    <!-- Grid Styles -->
+    <link rel="stylesheet" type="text/css" href="../Styles/grid.css" />
+    <!-- Typography Elements -->
+    <link rel="stylesheet" type="text/css" href="../Styles/typography.css" />
+    <!-- Jquery UI -->
+    <link rel="stylesheet" type="text/css" href="../Styles/jquery-ui.css" />
+    <!-- Jquery Plugin Css Files Base -->
+    <link rel="stylesheet" type="text/css" href="../Styles/jquery-plugin-base.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/menu.css" />
+   
+
+    <!--[if IE 7]>	  <link rel="stylesheet" type="text/css" href="../Style/ie7-../Style.css" />	<![endif]-->
+    <!-- jquery base -->
+    <script type="text/javascript" src="../Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.11.custom.min.js"></script>
+    <!-- jquery plugins settings -->
+    <script type="text/javascript" src="../Scripts/jquery-settings.js"></script>
+    <!-- toggle -->
+    <script type="text/javascript" src="../Scripts/toogle.js"></script>
+    <!-- tipsy -->
+    <script type="text/javascript" src="../Scripts/jquery.tipsy.js"></script>
+    <!-- uniform -->
+    <script type="text/javascript" src="../Scripts/jquery.uniform.min.js"></script>
+    <!-- Jwysiwyg editor -->
+    <script type="text/javascript" src="../Scripts/jquery.wysiwyg.js"></script>
+    <!-- table shorter -->
+    <script type="text/javascript" src="../Scripts/jquery.tablesorter.min.js"></script>
+
+    <!-- fullcalendar -->
+    <script type="text/javascript" src="../Scripts/fullcalendar.min.js"></script>
+    <!-- prettyPhoto -->
+    <script type="text/javascript" src="../Scripts/jquery.prettyPhoto.js"></script>
+    <!-- Jquery.UI Base -->
+    <script type="text/javascript" src="../Scripts/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.ui.mouse.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.ui.widget.js"></script>
+    <!-- Slider -->
+    <script type="text/javascript" src="../Scripts/jquery.ui.slider.js"></script>
+    <!-- Date Picker -->
+    <script type="text/javascript" src="../Scripts/jquery.ui.datepicker.js"></script>
+    <!-- Tabs -->
+    <script type="text/javascript" src="../Scripts/jquery.ui.tabs.js"></script>
+    <!-- Accordion -->
+    <script type="text/javascript" src="../Scripts/jquery.ui.accordion.js"></script>
+   
+    <!-- Date Tables -->
+    <script type="text/javascript" src="../Scripts/jquery.dataTables.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- START HEADER -->
+        <div id="header">
+            <!-- logo -->
+            <div class="logo">
+                <a href="Dashboard.aspx">
+                    <img src="../images/logo.png" width="112" height="35" alt="logo" /></a>
+            </div>
+            <!-- profile box -->
+            <div id="profilebox" style="position: relative; z-index:  99999;">
+                <a href="#" class="display"><b>Logged in as</b>
+                    <asp:Label ID="displayUserName" runat="server" Text="Admin"></asp:Label> </a>
+                <div class="profilemenu" style="z-index:  99999;">
+                    <ul style="position: relative; z-index:  99999;">
+                        <li style="z-index:  99999;"><a href="../Default.aspx">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+               <div id="page">
+        <!-- END HEADER -->
+        <ul class="nav">
+	<li><a href="Dashboard.aspx">Dashboard</a></li>
+      	<li><a href="ActiveTestList.aspx">Worksheet</a></li>
+
+       <li><a href="TestParmeterList.aspx">Test </a>&nbsp;<ul>
+				<li><a href="TestParmeterList.aspx"> Test List </a></li>
+              
+            <li class="dropdown"><a href="#">Specification</a>
+                       <ul>
+                <li><a href="ListSpecification.aspx?spn=1">Specification 1</a></li>
+                <li><a href="ListSpecification.aspx?spn=2">Specification 2</a></li>
+                <li><a href="ListSpecification.aspx?spn=3">Specification 3</a></li>
+                <li><a href="ListSpecification.aspx?spn=4">Specification 4</a></li>
+                <li><a href="ListSpecification.aspx?spn=5">Specification 5</a></li>
+                <li><a href="ListSpecification.aspx?spn=6">Specification 6</a></li>
+                <li><a href="ListSpecification.aspx?spn=7">Specification 7</a></li>
+                <li><a href="ListSpecification.aspx?spn=8">Specification 8</a></li>
+                <li><a href="ListSpecification.aspx?spn=9">Specification 9</a></li>
+                <li><a href="ListSpecification.aspx?spn=10">Specification 10</a></li>
+                <li><a href="ListSpecification.aspx?spn=11">Specification 11</a></li>
+                <li><a href="ListSpecification.aspx?spn=12">Specification 12</a></li>
+                <li><a href="ListSpecification.aspx?spn=13">Specification 13</a></li>
+                <li><a href="ListSpecification.aspx?spn=14">Specification 14</a></li>
+                <li><a href="ListSpecification.aspx?spn=15">Specification 15</a></li>
+                <li><a href="ListSpecification.aspx?spn=16">Specification 16</a></li>
+                <li><a href="ListSpecification.aspx?spn=17">Specification 17</a></li>
+                <li><a href="ListSpecification.aspx?spn=18">Specification 18</a></li>
+                <li><a href="ListSpecification.aspx?spn=19">Specification 19</a></li>
+                <li><a href="ListSpecification.aspx?spn=20">Specification 20</a></li>
+                </ul>
+		</li>
+
+
+	   <li><a href="IndustryList.aspx">Industry</a></li>
+        </ul>
+        </li>
+
+        <%--	<li><a href="ListTestMaster.aspx">Sampler TestMaster</a></li>
+        <li><a href="Schedule.aspx">Schedule</a></li>
+          <li><a href="Appointment.aspx">Appointment</a></li>
+--%>
+
+        </ul>
+
+         
+            	<!-- START CONTENT -->
+                    <div class="content">
+             <form id="form1" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </form>
+            </div>
+        </div>
+        <div class="clear">
+      
+    </div>
+  
+    <!-- START FOOTER -->
+    <div id="footer">
+        <div class="left-column">
+            © Copyright 2013 - All rights reserved.</div>
+        <div class="right-column">
+          </div>
+    </div>
+    <!-- END FOOTER -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="IndustryTestInfo" table="IndustryTestInfo" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="IndustryTestId">
+      <column name="IndustryTestId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+    <property name="IndustryInfoId"/>
+    <property name="TestParameterId"/>
+
+  </class>
+
+</hibernate-mapping>

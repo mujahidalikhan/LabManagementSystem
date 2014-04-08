@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="SystemUsers" table="SystemUsers" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="UserId">
+      <column name="UserID" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+    <property name="FirstName"/>
+    <property name="LastName"/>
+    <property name="EmailAddress"/>
+    <property name="UserName"/>
+    <property name="Password"/>
+    <property name="Type"/>
+  </class>
+
+</hibernate-mapping>

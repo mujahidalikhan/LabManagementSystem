@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="ActiveTestsInfo" table="ActiveTestsInfo" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="ActiveTestId">
+      <column name="ActiveTestId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+   
+    <property name="DateCreated"/>
+    <property name="SampleInformation"/>
+    <property name="SampleDescription"/>
+    <property name="SampleRecievedOn"/>
+    <property name="TypeOfSampling"/>
+    <property name="AnalysisCondition"/>
+    <property name="PackingId"/>
+    <property name="CurrentStatus"/>
+    <property name="AssignTo"/>
+    <property name="LabNumber"/>
+    <property name="SpecificationType"/>
+    <property name="Attention"/>
+    <property name="IndustryId"/>
+    <many-to-one name="Customer" column="CustomerId" />
+ 
+    <many-to-one name="JobDetail" column="JobDetailID" />
+    <property name="JobInfoId"/>
+
+    <property name="EstimatedEndTime"/>
+    <property name="ActualEndTime"/>
+    <property name="LastKeyInBy"/>
+    <property name="LastUpdateDateTime"/>
+
+
+    <property name="Point"/>
+    <property name="Urgent"/>
+    <property name="Specification"/>
+    <property name="Standard"/>
+    <property name="TestPoint"/>
+    <property name="PointNumber"/>
+    
+  </class>
+
+</hibernate-mapping>

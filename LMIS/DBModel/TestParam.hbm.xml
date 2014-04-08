@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="TestParam" table="TestParam" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="TestID">
+      <column name="TestID" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+
+
+    <property name="Parameter"/>
+    <property name="Units"/>
+    <property name="Category"/>
+    <property name="StdA_Min"/>
+    <property name="StdA_Max"/>
+    <property name="StdB_Min"/>
+    <property name="StdB_Max"/>
+    <property name="AssignTime"/>
+              
+              
+              </class>
+
+</hibernate-mapping>

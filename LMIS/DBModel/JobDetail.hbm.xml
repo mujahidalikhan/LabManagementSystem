@@ -1,0 +1,37 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="JobDetail" table="JobDetail" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="JobDetailId">
+      <column name="JobDetailId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+   
+    <property name="Descriptation"/>
+    <property name="Frequency"/>
+   
+    <property name="Quantity"/>
+  
+    <property name="TestInfo"/>
+    <property name="ParentId"/>
+    <property name="IndustryId"/>
+    <many-to-one name="JobInfo" column="JobId" />
+
+    <property name="Point"/>
+    <property name="Urgent"/>
+    <property name="Specification"/>
+    <property name="Standard"/>
+    <property name="LabNumber"/>
+    <property name="TestPoint"/>
+    <property name="PointNumber"/>
+  </class>
+
+</hibernate-mapping>

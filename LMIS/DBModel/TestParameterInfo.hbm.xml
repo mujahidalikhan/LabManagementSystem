@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="TestParameterInfo" table="TestParameterInfo" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="TestParameterId">
+      <column name="TestParameterId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+    <property name="AccreditedTestParameter"/>
+    <property name="TestMethod"/>
+    <property name="Unit"/>
+    <property name="Equipment"/>
+    <property name="MDL"/>
+    <property name="ShortTerm"/>
+  </class>
+
+</hibernate-mapping>

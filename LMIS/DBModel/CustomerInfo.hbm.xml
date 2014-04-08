@@ -1,0 +1,53 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <!-- Mappings for class 'Customer' -->
+  <class name="CustomerInfo" table="CustomerInfo" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="CustID">
+      <column name="CustID" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+
+
+    <property name="CustName" />
+    <property name="Nature" />
+    <property name="Specification" />
+    <property name="Address" />
+    <property name="City" />
+    <property name="State" />
+    <property name="Poscode" />
+    <property name="Salutation1" />
+    <property name="Person1" />
+    <property name="Position1" />
+    <property name="Phone1" />
+    <property name="HPhone1" />
+    <property name="Fax1" />
+    <property name="Email1" />
+    <property name="Salutation2" />
+    <property name="Person2" />
+    <property name="Position2" />
+    <property name="Phone2" />
+    <property name="HPhone2" />
+    <property name="Fax2" />
+    <property name="Email2" />
+    <property name="Salutation3" />
+    <property name="Person3" />
+    <property name="Position3" />
+    <property name="Phone3" />
+    <property name="HPhone3" />
+    <property name="Fax3" />
+    <property name="Email3" />
+    <property name="Member_Since" />
+    <property name="Reward"/>
+    <property name="Country"/>
+    <property name="Status"/>
+    
+  </class>
+
+</hibernate-mapping>

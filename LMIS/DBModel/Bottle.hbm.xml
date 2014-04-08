@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="LMIS.DBModel"
+                   assembly="LMIS">
+
+  <class name="Bottle" table="Bottle" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="bottleId">
+      <column name="bottleId" />
+      <generator class="native" />
+    </id>
+
+    <!-- Simple mappings -->
+    <property name="PreservativeChemical"/>
+    <property name="VolumeType1"/>
+    <property name="VolumeType2"/>
+    <property name="VolumeType3"/>
+  </class>
+
+</hibernate-mapping>

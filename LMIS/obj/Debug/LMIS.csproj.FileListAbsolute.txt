@@ -1,0 +1,4 @@
+F:\Freelance Projects\In progress\LMIS\LMIS\bin\LMIS.dll
+F:\Freelance Projects\In progress\LMIS\LMIS\bin\LMIS.pdb
+F:\Freelance Projects\In progress\LMIS\LMIS\obj\Debug\LMIS.dll
+F:\Freelance Projects\In progress\LMIS\LMIS\obj\Debug\LMIS.pdb
